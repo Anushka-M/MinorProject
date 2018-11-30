@@ -147,7 +147,7 @@
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-tasks" aria-hidden="true"></i>
-											<span>UI Elements</span>
+											<span>Parameters</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -260,7 +260,7 @@
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>Forms</span>
+											<span>Threshold</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -298,7 +298,7 @@
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-table" aria-hidden="true"></i>
-											<span>Tables</span>
+											<span>Datasets</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -336,7 +336,7 @@
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-map-marker" aria-hidden="true"></i>
-											<span>Maps</span>
+											<span>Locations</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -359,7 +359,7 @@
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>Layouts</span>
+											<span>Conditions</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -387,7 +387,7 @@
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-align-left" aria-hidden="true"></i>
-											<span>Menu Levels</span>
+											<span>Graph</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -420,7 +420,7 @@
 									<li>
 										<a href="https://themeforest.net/item/JSOFT-responsive-html5-template/4106987?ref=JSOFT" target="_blank">
 											<i class="fa fa-external-link" aria-hidden="true"></i>
-											<span>Front-End <em class="not-included">(Not Included)</em></span>
+											<span>Interface <em class="not-included">(Not Included)</em></span>
 										</a>
 									</li>
 								</ul>
@@ -490,7 +490,7 @@
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>Smart City Design</h2>
+						<h2>Smart City Framework - Environment Monitoring</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -505,7 +505,33 @@
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
 						</div>
 					</header>
-
+						<div class="row">
+									
+							<div class="col-md-6">
+								<section class="panel">
+									<header class="panel-heading">
+										<h2 class="panel-title"><center>Temperature sensor</center></h2>
+									</header>
+									<div class="panel-body" align="center">
+										<img src="/home/tanya/Desktop/MinorProject-master/octopus/assets/images/lm35.jpeg" width="300px">
+										 <button type="button">View Dataset</button> 
+										  <button type="button">Start Analysis</button> 
+									</div>
+								</section>
+							</div>
+							<div class="col-md-6">
+								<section class="panel">
+									<header class="panel-heading">
+										<h2 class="panel-title"><center>Humidity sensor</center> </h2>
+									</header>
+									<div class="panel-body" align="center">
+										<img src="/home/tanya/Desktop/MinorProject-master/octopus/assets/images/hyss220.jpg" width="300px">
+										 <button type="button">View Dataset</button> 
+										  <button type="button">Start Analysis</button> 
+									</div>
+								</section>
+							</div>
+						</div>
 						<div class="row">
 						<div class="col-md-6">
 							<section class="panel">
@@ -515,8 +541,8 @@
 										<a href="#" class="fa fa-times"></a>
 									</div>
 
-									<h2 class="panel-title">Sensor Graph</h2>
-									<p class="panel-subtitle">Sensor Information with placeholder text which can later be completed with some random details</p>
+									<h2 class="panel-title">Temperature Analysis</h2>
+									<p class="panel-subtitle">Correlation between each pair of sensor nodes within each deployment listed in dataset and plot of these values directly according to distance.</p>
 								</header>
 								<div class="panel-body">
 
@@ -538,7 +564,7 @@
 												[9, 128],
 												[10, 128]
 											],
-											label: "Series 1",
+											label: "Ambient temperature",
 											color: "#0088cc"
 										}, {
 											data: [
@@ -554,7 +580,7 @@
 												[9, 103],
 												[10, 113]
 											],
-											label: "Series 2",
+											label: "Surface temperature",
 											color: "#2baab1"
 										}, {
 											data: [
@@ -570,7 +596,7 @@
 												[9, 28],
 												[10, 28]
 											],
-											label: "Series 3",
+											label: "Relative humidity",
 											color: "#734ba9"
 										}];
 
@@ -588,8 +614,8 @@
 										<a href="#" class="fa fa-caret-down"></a>
 										<a href="#" class="fa fa-times"></a>
 									</div>
-									<h2 class="panel-title">Analysis</h2>
-									<p class="panel-subtitle">Continuous monitoring, acessing and analysis of data from various IoT sensors, brought to us through cloud.</p>
+									<h2 class="panel-title">Humidity Analysis</h2>
+									<p class="panel-subtitle">Continuous monitoring, acessing and analysis of data from humidity sensors, brought to us through cloud.</p>
 								</header>
 								<div class="panel-body">
 

@@ -41,7 +41,30 @@
 
 		<!-- Head Libs -->
 		<script src="assets/vendor/modernizr/modernizr.js"></script>
+		<script type="text/javascript">
+			window.smoothScroll = function(target) {
+    var scrollContainer = target;
+    do { //find scroll container
+        scrollContainer = scrollContainer.parentNode;
+        if (!scrollContainer) return;
+        scrollContainer.scrollTop += 1;
+    } while (scrollContainer.scrollTop == 0);
 
+    var targetY = 0;
+    do { //find the top of target relatively to the container
+        if (target == scrollContainer) break;
+        targetY += target.offsetTop;
+    } while (target = target.offsetParent);
+
+    scroll = function(c, a, b, i) {
+        i++; if (i > 30) return;
+        c.scrollTop = a + (b - a) / 30 * i;
+        setTimeout(function(){ scroll(c, a, b, i); }, 20);
+    }
+    // start scrolling
+    scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+}
+		</script>
 	</head>
 	<body>
 		<section class="body">
@@ -124,23 +147,19 @@
 											<i class="fa fa-copy" aria-hidden="true"></i>
 											<span>Sensors</span>
 										</a>
-										<ul class="nav nav-children">
+										<ul class="nav nav-children" >
 											<li>
-												<a href="pages-signup.html">
-													 Sensor 1
-												</a>
+											<a href="">Temperature </a>	
 											</li>
 											<li>
-												<a href="pages-signin.html">
-													 Sensor 2
-												</a>
+												<a href="">Humidity</a>	
 											</li>
 											<li>
-												<a href="pages-recover-password.html">
-													 Sensor 3
-												</a>
+												<a href="">Sound</a>	
 											</li>
-											
+											<li>
+												<a href="">Air Quality</a>	
+											</li>
 											
 										</ul>
 									</li>
@@ -151,108 +170,33 @@
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="ui-elements-typography.html">
-													 Typography
+												<a href="">
+													 Ambient Temperature
 												</a>
 											</li>
 											<li>
-												<a href="ui-elements-icons.html">
-													 Icons
+												<a href="">
+													 Surface Temperature
 												</a>
 											</li>
 											<li>
-												<a href="ui-elements-tabs.html">
-													 Tabs
+												<a href="">
+													Relative Humidity 
 												</a>
 											</li>
 											<li>
-												<a href="ui-elements-panels.html">
-													 Panels
+												<a href="">
+													Absolute Humidity 
 												</a>
 											</li>
 											<li>
-												<a href="ui-elements-widgets.html">
-													 Widgets
+												<a href="">
+													 PPM
 												</a>
 											</li>
 											<li>
-												<a href="ui-elements-portlets.html">
-													 Portlets
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-buttons.html">
-													 Buttons
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-alerts.html">
-													 Alerts
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-notifications.html">
-													 Notifications
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-modals.html">
-													 Modals
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-lightbox.html">
-													 Lightbox
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-progressbars.html">
-													 Progress Bars
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-sliders.html">
-													 Sliders
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-carousels.html">
-													 Carousels
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-accordions.html">
-													 Accordions
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-nestable.html">
-													 Nestable
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-tree-view.html">
-													 Tree View
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-grid-system.html">
-													 Grid System
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-charts.html">
-													 Charts
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-animations.html">
-													 Animations
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-extra.html">
-													 Extra
+												<a href="">
+													 Noise
 												</a>
 											</li>
 										</ul>
@@ -262,38 +206,7 @@
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
 											<span>Threshold</span>
 										</a>
-										<ul class="nav nav-children">
-											<li>
-												<a href="forms-basic.html">
-													 Basic
-												</a>
-											</li>
-											<li>
-												<a href="forms-advanced.html">
-													 Advanced
-												</a>
-											</li>
-											<li>
-												<a href="forms-validation.html">
-													 Validation
-												</a>
-											</li>
-											<li>
-												<a href="forms-layouts.html">
-													 Layouts
-												</a>
-											</li>
-											<li>
-												<a href="forms-wizard.html">
-													 Wizard
-												</a>
-											</li>
-											<li>
-												<a href="forms-code-editor.html">
-													 Code Editor
-												</a>
-											</li>
-										</ul>
+										
 									</li>
 									<li class="nav-parent">
 										<a>
@@ -302,35 +215,16 @@
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="tables-basic.html">
-													 Basic
+												<a href="https://docs.google.com/spreadsheets/d/1Hmo6KYLqsxHEQ3t2PVNrLOugHlHIqkDNGO-1AodSfY8/edit?usp=sharing">
+													 Pollution Board
 												</a>
 											</li>
 											<li>
-												<a href="tables-advanced.html">
-													 Advanced
+												<a href="https://drive.google.com/file/d/1NQ2SCH0IUjBBOGX_EOTBz0dXXIXWlS_L/view?usp=sharing">
+													 Sound
 												</a>
 											</li>
-											<li>
-												<a href="tables-responsive.html">
-													 Responsive
-												</a>
-											</li>
-											<li>
-												<a href="tables-editable.html">
-													 Editable
-												</a>
-											</li>
-											<li>
-												<a href="tables-ajax.html">
-													 Ajax
-												</a>
-											</li>
-											<li>
-												<a href="tables-pricing.html">
-													 Pricing
-												</a>
-											</li>
+											
 										</ul>
 									</li>
 									<li class="nav-parent">
@@ -340,89 +234,42 @@
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="maps-google-maps.html">
-													 Basic
+												<a href="">
+													 Delhi
 												</a>
 											</li>
-											<li>
-												<a href="maps-google-maps-builder.html">
-													 Map Builder
-												</a>
-											</li>
-											<li>
-												<a href="maps-vector.html">
-													 Vector
-												</a>
-											</li>
+											
 										</ul>
 									</li>
 									<li class="nav-parent">
 										<a>
-											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>Conditions</span>
+											<i class="fa fa-map-marker" aria-hidden="true"></i>
+											<span>Algorithms</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="layouts-default.html">
-													 Default
+												<a href="">
+													 Bayesian
 												</a>
 											</li>
 											<li>
-												<a href="layouts-boxed.html">
-													 Boxed
+												<a href="">
+													K-Means 
 												</a>
 											</li>
 											<li>
-												<a href="layouts-menu-collapsed.html">
-													 Menu Collapsed
+												<a href="">
+													Principal Component 
 												</a>
 											</li>
 											<li>
-												<a href="layouts-scroll.html">
-													 Scroll
+												<a href="">
+													 Support Vector
 												</a>
 											</li>
 										</ul>
 									</li>
-									<li class="nav-parent">
-										<a>
-											<i class="fa fa-align-left" aria-hidden="true"></i>
-											<span>Graph</span>
-										</a>
-										<ul class="nav nav-children">
-											<li>
-												<a>First Level</a>
-											</li>
-											<li class="nav-parent">
-												<a>Second Level</a>
-												<ul class="nav nav-children">
-													<li class="nav-parent">
-														<a>Third Level</a>
-														<ul class="nav nav-children">
-															<li>
-																<a>Third Level Link #1</a>
-															</li>
-															<li>
-																<a>Third Level Link #2</a>
-															</li>
-														</ul>
-													</li>
-													<li>
-														<a>Second Level Link #1</a>
-													</li>
-													<li>
-														<a>Second Level Link #2</a>
-													</li>
-												</ul>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<a href="https://themeforest.net/item/JSOFT-responsive-html5-template/4106987?ref=JSOFT" target="_blank">
-											<i class="fa fa-external-link" aria-hidden="true"></i>
-											<span>Interface <em class="not-included">(Not Included)</em></span>
-										</a>
-									</li>
+									
 								</ul>
 							</nav>
 				
@@ -502,7 +349,7 @@
 								<li><span>Dashboard</span></li>
 							</ol>
 					
-							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+							<!--a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a-->
 						</div>
 					</header>
 						<div class="row">
@@ -514,8 +361,10 @@
 									</header>
 									<div class="panel-body" align="center">
 										<img src="/home/tanya/Desktop/proj/octopus/assets/images/lm35.jpeg" width="300px" height="300px">
-										 <button type="button">View Dataset</button> 
-										  <button type="button">Start Analysis</button> 
+										 <a href="https://docs.google.com/spreadsheets/d/1Hmo6KYLqsxHEQ3t2PVNrLOugHlHIqkDNGO-1AodSfY8/edit?usp=sharing" class="btn btn-default" target="_blank" >View Dataset</a> 
+										  <!--button type="button" class="btn btn-default">Start Analysis</button--> 
+										  <button type="button" class="first btn btn-default" onclick="smoothScroll(document.getElementById('secondtemp'))">Start Analysis</button>
+											
 									</div>
 								</section>
 							</div>
@@ -526,13 +375,45 @@
 									</header>
 									<div class="panel-body" align="center">
 										<img src="/home/tanya/Desktop/proj/octopus/assets/images/hyss220.jpg" width="300px" height="300px">
-										 <button type="button">View Dataset</button> 
-										  <button type="button">Start Analysis</button> 
+										 <a href="https://docs.google.com/spreadsheets/d/1Hmo6KYLqsxHEQ3t2PVNrLOugHlHIqkDNGO-1AodSfY8/edit?usp=sharing" class="btn btn-default" target="_blank" >View Dataset</a> 
+										  <button type="button" class="first btn btn-default" onclick="smoothScroll(document.getElementById('secondhum'))">Start Analysis</button> 
 									</div>
 								</section>
 							</div>
 						</div>
 						<div class="row">
+									
+							<div class="col-md-6">
+								<section class="panel">
+									<header class="panel-heading">
+										<h2 class="panel-title"><center>Sound sensor</center></h2>
+									</header>
+									<div class="panel-body" align="center">
+										<img src="/home/tanya/Desktop/proj/octopus/assets/images/fc04.jpeg" width="300px" height="300px">
+										 <a href="https://drive.google.com/file/d/1NQ2SCH0IUjBBOGX_EOTBz0dXXIXWlS_L/view" class="btn btn-default" target="_blank" >View Dataset</a> 
+										  <button type="button" class="first btn btn-default" onclick="smoothScroll(document.getElementById('secondsou'))">Start Analysis</button> 
+									</div>
+								</section>
+							</div>
+							<div class="col-md-6">
+								<section class="panel">
+									<header class="panel-heading">
+										<h2 class="panel-title"><center>Air quality sensor</center> </h2>
+									</header>
+									<div class="panel-body" align="center">
+										<img src="/home/tanya/Desktop/proj/octopus/assets/images/mq-135.jpg" width="300px" height="300px">
+										<a href="https://docs.google.com/spreadsheets/d/1Hmo6KYLqsxHEQ3t2PVNrLOugHlHIqkDNGO-1AodSfY8/edit?usp=sharing" class="btn btn-default" target="_blank" >View Dataset</a> 
+										 <button type="button" class="first btn btn-default" onclick="smoothScroll(document.getElementById('secondair'))">Start Analysis</button> 
+									</div>
+								</section>
+							</div>
+						</div>
+						<div class="row second" id="secondtemp">
+							<br>
+						<br>
+						<br><br><br>
+							<div class="col-md-3">
+							</div>
 						<div class="col-md-6">
 							<section class="panel">
 								<header class="panel-heading">
@@ -607,6 +488,14 @@
 								</div>
 							</section>
 						</div>
+					</div>
+					
+					<div class="row second" id="secondhum">
+							<br>
+						<br>
+						<br><br><br>
+							<div class="col-md-3">
+							</div>
 						<div class="col-md-6">
 							<section class="panel">
 								<header class="panel-heading">
@@ -626,35 +515,13 @@
 							</section>
 						</div>
 					</div>
-					<div class="row">
-									
-							<div class="col-md-6">
-								<section class="panel">
-									<header class="panel-heading">
-										<h2 class="panel-title"><center>Sound sensor</center></h2>
-									</header>
-									<div class="panel-body" align="center">
-										<img src="/home/tanya/Desktop/proj/octopus/assets/images/fc04.jpeg" width="300px" height="300px">
-										 <button type="button">View Dataset</button> 
-										  <button type="button">Start Analysis</button> 
-									</div>
-								</section>
+					<br><br><br>
+						<div class="row second" id="secondsou">
+							<br>
+						<br>
+						<br><br><br>
+							<div class="col-md-3">
 							</div>
-							<div class="col-md-6">
-								<section class="panel">
-									<header class="panel-heading">
-										<h2 class="panel-title"><center>Air quality sensor</center> </h2>
-									</header>
-									<div class="panel-body" align="center">
-										<img src="/home/tanya/Desktop/proj/octopus/assets/images/mq-135.jpg" width="300px" height="300px">
-										 <button type="button">View Dataset</button> 
-										  <button type="button">Start Analysis</button> 
-									</div>
-								</section>
-							</div>
-						</div>
-					<!-- start: page -->
-					<div class="row">
 						<div class="col-md-6 col-lg-12 col-xl-6">
 							<section class="panel">
 								<div class="panel-body">
@@ -665,9 +532,9 @@
 													Sound Analysis
 													<strong>
 														<select class="form-control" id="salesSelector">
-															<option value="JSOFT Admin" selected>Sensor 1</option>
-															<option value="JSOFT Drupal" >Sensor 2</option>
-															<option value="JSOFT Wordpress" >Sensor 3</option>
+															<option value="JSOFT Admin" selected>Noise</option>
+															<option value="JSOFT Drupal" >Groups</option>
+															<option value="JSOFT Wordpress" >Animals</option>
 														</select>
 													</strong>
 												</h2>
@@ -742,6 +609,16 @@
 
 											</div>
 										</div>
+									</div>
+								</div>
+								<br><br><br>
+								<br><br><br>
+										<div class="row second" id="secondair">
+							<br>
+						<br>
+						<br><br><br>
+							<div class="col-md-4">
+							</div>
 										<div class="col-lg-4 text-center">
 											<h2 class="panel-title mt-md">Maximum PPM Limit</h2>
 											<div class="liquid-meter-wrapper liquid-meter-sm mt-lg">
@@ -761,7 +638,10 @@
 						
 					</div>
 
-					
+					<br>
+						<br>
+						<br><br><br>
+
 					<!--div class="row">
 						
 						<div class="col-lg-6 col-md-12">
